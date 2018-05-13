@@ -1,0 +1,151 @@
+/* Empty. Add your own CSS if you like */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font-family: Microsoft YaHei;
+}
+/*修改ionic.css里面轮播图的样式*/
+.slider-pager {
+  bottom: 0.2rem;
+}
+.slider-pager .slider-pager-page {
+  color: white;
+}
+.slider-pager .slider-pager-page.active {
+  -webkit-transition: opacity 0.4s ease-in;
+  transition: opacity 0.4s ease-in;
+  opacity: 1;
+}
+/*tab导航栏样式*/
+.hideTab{
+  display: none
+}
+.tabWrap{
+  text-align: center;
+  height: 0.88rem;
+}
+.noSelectTab{
+  color: gray;
+}
+.selectTab{
+  color: rgba(56,126,245,1);
+}
+#homeWrap,#nwordWrap,#myWrap{
+  width: 2.5rem;
+}
+.tabIcon{
+  font-size: 0.5rem;
+}
+.tabWord{
+  font-size: 0.2rem;
+  line-height: 0.2rem;
+}
+
+/*引导页样式*/
+.login{
+  position: absolute;
+  top: 83%;
+  right: 1.25rem;
+  width: 5rem;
+  font-size: 0.36rem;
+}
+/*播放控件样式*/
+.audio_area #playhead {
+  width: 0%;
+  height: 0.04rem;
+  background-color: #0CBB08;
+}
+.audio_area #playheadIcon{
+  width: 0.16rem;
+  margin-top: -1.1%;
+  position: absolute;
+  z-index:1000
+}
+.audio_area {
+  width: 7.3rem;
+  position: relative;
+  text-decoration: none;
+  -webkit-text-size-adjust: none;
+}
+
+.audio_wrp {
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.audio_play_area {
+  width: 0.36rem;
+  height: 0.5rem;
+}
+.audio_area .audio_length {
+  right: 0;
+  font-size: 0.24rem;
+  position: absolute;
+  top: 13%;
+}
+.audio_area .audio_played {
+  left: 0;
+  font-size: 0.24rem;
+  position: absolute;
+  top: 11%;
+}
+.tips_global {
+  color: #8c8c8c;
+}
+.audio_area .progress_bar {
+  position: absolute;
+  left: 0.68rem;
+  top: 27%;
+  background-color: #eee;
+  height: 0.04rem;
+  width: 5.8rem;
+  padding: 0;
+}
+/*暂停／播放／重播 按钮*/
+.audio_play_area .icon_audio_pause {
+  top: 17%;
+  left: 3.68rem;
+  position: absolute;
+  font-size: 0.58rem;
+  display:  inline-block;
+}
+
+.audio_play_area .icon_audio_play{
+  top: 17%;
+  left: 3.68rem;
+  position: absolute;
+  font-size: 0.58rem;
+  display: none;
+}
+
+.audio_play_area .icon_audio_replay{
+  top: 17%;
+  left: 3.68rem;
+  position: absolute;
+  font-size: 0.58rem;
+  display: none;
+}
+.audio_setting{
+  margin:0;
+  padding: 0;
+}
+.centerItem{
+  text-align: center;
+  line-height: 2.8;
+}
+

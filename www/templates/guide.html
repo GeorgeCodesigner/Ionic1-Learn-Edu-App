@@ -1,0 +1,18 @@
+<ion-view hide-back-button="true" hide-nav-bar="true" hide-tabs="true">
+  <ion-content has-bouncing="false">
+    <ion-slide-box show-pager="true">
+      <ion-slide>
+        <img ng-src="{{guideBox[0].image}}">
+      </ion-slide>
+      <ion-slide>
+        <img ng-src="{{guideBox[1].image}}">
+      </ion-slide>
+      <ion-slide>
+        <img ng-src="{{guideBox[2].image}}">
+        <button class="button button-balanced login" ng-click="goLogin()">
+          登录
+        </button>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

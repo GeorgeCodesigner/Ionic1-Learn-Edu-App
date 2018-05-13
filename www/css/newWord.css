@@ -1,0 +1,58 @@
+.nwHeader{
+  width: 100%;
+  height: 0.88rem;
+  font-size: 0.36rem;
+  text-align: center;
+  line-height: 0.88rem;
+  padding: 0;
+}
+.nwhLeft{
+  width:1.5rem;
+}
+.nwhMid{
+  width:4.5rem;
+  font-size: 0.4rem;
+}
+.nwhRight{
+  width:1.5rem;
+}
+.nwContent{
+  bottom: 49px;
+  margin-top: 0.88rem;
+  width:100%;
+  padding:0.2rem 0.4rem 0 0.4rem;
+}
+.nwItem{
+  height: 1rem;
+  width: 6.7rem;
+  border-bottom: 1px solid gray;
+  font-size: 0.36rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1rem;
+  position: relative;
+}
+.nwChinese{
+  width: 2.5rem;
+  height: 100%;
+  margin-left: 0.2rem;
+  position: absolute;
+}
+.nwEnglish{
+  width: 2.5rem;
+  height: 100%;
+  margin-left: 2.7rem;
+  position: absolute;
+}
+.nwlButton{
+  width: 1.5rem;
+  height: 100%;
+  position: absolute;
+  margin-left: 5.2rem;
+  text-align: center;
+}
+.nwlbWord{
+  background-color: rgba(56,126,245,1);
+  padding: 0.1rem 0.2rem;
+}

@@ -1,0 +1,186 @@
+<ion-view class="newDetCon" hide-back-button="true" hide-nav-bar="true" hide-tabs="true">
+  <style type="text/css">
+    .newdetail-header{
+      padding:0;
+      text-align: center;
+      height: 0.88rem;
+      position: absolute;
+      z-index: 100;
+      line-height: 0.88rem;
+    }
+    .newdetail-back{
+      font-size: 0.4rem;
+      width: 1.5rem;
+      color: #ffffff;
+    }
+    .newdetail-share{
+      font-size: 0.32rem;
+      width: 1.5rem;
+      color: #edeaeb
+    }
+    .newDetailCont{
+      position: absolute;
+      width:100%;
+      bottom: 0.88rem;
+    }
+    .newdetail-general{
+      width: 100%;
+      height: 3.38rem;
+      padding: 0;
+    }
+    #newdetail-total{
+      margin: 1.2rem 0.5rem 0 0.5rem;
+      padding: 0;
+      transform:scale(1,1);/* IE 10 和 Firefox */
+      -ms-transform:scale(1,1);	/* IE 9 */
+      -webkit-transform:scale(1,1); /* Safari 和 Chrome 和 Opera */
+      opacity: 1;
+    }
+
+    .ttitle{
+      font-size: 0.5rem;
+      white-space: nowrap;
+      height: 0.6rem;
+      line-height: 1;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      margin-bottom: 0.2rem;
+    }
+    .bintro{
+      font-size: 0.28rem;
+    }
+    .subsWrap{
+      width: 40%
+    }
+    .subscribe{
+      border-radius: 0;
+      margin: 0.6rem 0 0 0.6rem;
+      width: 70%;
+    }
+    .newdetail-choose{
+      top: 3.38rem;
+      padding:0;
+      text-align: center;
+      height: 0.7rem;
+      font-size: 0.24rem
+    }
+    .newdetail-list{
+      top: 4.08rem;
+      position: absolute;
+      width: 100%;
+      padding: 0 0.5rem;
+    }
+    .newdetail-item{
+      border: 0;
+      padding: 0.4rem 0 0 0;
+    }
+    .detail_item1{
+      width: 100%;
+      font-size: 0.36rem;
+      margin-bottom: 0.1rem;
+    }
+    .detail_item2{
+      width: 100%;
+      font-size: 0.26rem;
+      margin-bottom: 0.2rem;
+    }
+    .title_item{
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width:80%;
+      height: 0.5rem;
+    }
+    .download_item{
+      width: 20%;
+      position: absolute;
+      right: -0.5rem;
+      top: 25%;
+    }
+    .newdetail-foot{
+      padding: 0;
+      text-align: center;
+      background-color: beige;
+      height: 0.88rem;
+    }
+    .mask{
+      position:absolute;
+      background-color:#000000;
+      opacity:0.3;
+      width:100%;
+      height:100%;
+      z-index:100;
+    }
+    #share{
+      position: absolute;
+      bottom:-100%;
+      background-color: #ffffff;
+      width:100%;
+      height:3rem;
+      z-index:200;
+    }
+    .shareTitle{
+      justify-content: center;
+      margin-top: 4%;
+    }
+    .shareButRow{
+      justify-content:space-around;
+      margin-top: 2%;
+    }
+    .shareBut{
+      font-size: 0.32rem;
+      width: 20%;
+      text-align: center;
+    }
+  </style>
+  <!--头部-->
+  <div class="row newdetail-header" style="background-color: transparent;">
+    <span class="newdetail-back touchItem" ng-click="goback()">返回</span>
+    <span style="width:4.5rem;"></span>
+    <span class=" newdetail-share touchItem" ng-click="shareOpen()">分享</span>
+  </div>
+  <ion-content scrollbar-y="false" class="newDetailCont" has-bouncing="false">
+    <!--标题部分-->
+    <div class="bar bar-positive newdetail-general">
+      <div class="row" id="newdetail-total">
+        <span style="width: 60%;">
+          <div class="ttitle" ng-bind="totalTitle"></div>
+          <div class="bintro" ng-bind="briefIntro"></div>
+        </span>
+        <span class="subsWrap">
+          <span style="font-size:0.34rem;" class="button button-stable subscribe" ng-bind="subFlag"></span>
+        </span>
+      </div>
+    </div>
+    <!--列表总操作部分-->
+    <div class="bar bar-stable newdetail-choose">
+      <div class="row">
+        <span style="width: 25%;line-height: 1.9;">共<span ng-bind="totalList"></span>篇</span>
+        <span style="width: 50%;"></span>
+        <span style="width: 25%;" class="touchItem" ng-click="orderList()">
+          <i style="font-size: 0.3rem;" ng-class="{1:'ion-ios-arrow-thin-up',0:'ion-ios-arrow-thin-down'}[showOrder]"></i>
+          <span>排序</span>
+        </span>
+      </div>
+    </div>
+    <!--节目详情列表-->
+    <ion-list class="newdetail-list">
+      <ion-item class="newdetail-item" ng-repeat="item in detailItem|orderBy:volumeOrder">
+        <div class="detail_item1">
+          <div class="title_item" ng-bind="item.title"></div>
+          <span class="download_item" ng-click="singleDl(item,true)">下载</span>
+        </div>
+        <div class="detail_item2">
+          <span style="width:30%;margin-right: 0.7rem;" ng-bind="item.pubdate"></span>
+          <span style="width:40%;margin-right: 0.7rem;">播放量：<span ng-bind="item.volume"></span></span>
+          <span style="width:30%">时长：<span ng-bind="item.duration|changeDur"></span></span>
+        </div>
+        <hr style="margin: 0"/>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <!--底部按钮-->
+  <div class="bar bar-footer newdetail-foot">
+    <div class="title" ng-click="batchDown()">批量下载</div>
+  </div>
+</ion-view>

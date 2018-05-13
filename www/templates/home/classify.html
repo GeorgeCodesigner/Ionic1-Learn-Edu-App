@@ -1,0 +1,141 @@
+<ion-view hide-back-button="true" hide-nav-bar="true" hide-tabs="true">
+  <style type="text/css">
+    /*头部*/
+    .classify-header{
+      padding:0;
+      text-align: center;
+      height: 0.88rem;
+      line-height: 0.88rem;
+      font-size: 0.36rem;
+    }
+    .classify-htitle{
+      width: 6rem;
+      margin-left: -0.75rem;
+    }
+    .classify-Item{
+      width: 1.5rem;
+    }
+    .classify-row{
+      padding: 0;
+    }
+    .classify-row input{
+      width: 100%;
+      font-size: 0.36rem;
+      padding: 0 0 0 5px;
+      position: relative;
+      top: 11%;
+    }
+    /*筛选条件*/
+    .classify-choose{
+      position: relative;
+      top: 0.88rem;
+      padding:0;
+      text-align: center;
+      height: 0.7rem;
+    }
+    .choose-Item{
+      padding:0;
+      text-align: center;
+      font-size: 0.32rem;
+      vertical-align: middle;
+      line-height: 2.1;
+    }
+    .popIcon{
+      font-size: 0.3rem;
+      position: absolute;
+      right: 0.3rem;
+      top: -8%;
+    }
+    .typeIcon{
+      width: 0.2rem;
+      position: absolute;
+      top: 10%;
+      left: 1.65rem;
+    }
+    .difIcon{
+      width: 0.2rem;
+      position: absolute;
+      top: 10%;
+      left: 3.3rem;
+    }
+    .tChoose,.dChoose{
+      display: block;
+    }
+    .tNotChoose,.dNotChoose{
+      display: none;
+    }
+    .popActive{
+      color:#0CBB08;
+    }
+    /*内容*/
+    .classifyContent{
+      position: absolute;
+      top:1.58rem;
+      width:100%;
+    }
+    .classifyBody{
+      position: relative;
+      width:100%;
+
+    }
+    .classify-list{
+      padding: 7% 0 3% 30%;
+      border:0
+    }
+    .classify-title{
+      font-size: 0.36rem;
+      margin-bottom: 3%;
+    }
+    .classify-dif{
+      font-size: 0.32rem;
+      padding-right: 12%;
+    }
+    .classify-pop{
+      font-size: 0.32rem;
+    }
+  </style>
+  <div class="bar bar-header bar-positive classify-header">
+      <span class="classify-Item touchItem" ng-click="goback()">返回</span>
+      <span class="classify-htitle">分类</span>
+  </div>
+  <div class="bar bar-stable classify-choose">
+    <div class="row classify-row">
+      <div class="col choose-Item touchItem" ng-click="tShow()">
+        <span ng-bind="type"></span>
+        <span class="typeIcon">
+          <i style="font-size: 0.25rem" class="ion-chevron-down" ng-class="{true:'tChoose',false:'tNotChoose'}[typeShow[0]]"></i>
+          <i style="font-size: 0.25rem" class="ion-chevron-up" ng-class="{true:'tChoose',false:'tNotChoose'}[typeShow[1]]"></i>
+        </span>
+      </div>
+      <div class="col choose-Item touchItem" ng-click="dShow()">
+        <span>难度</span>
+        <span class="difIcon">
+          <i style="font-size: 0.25rem" class="ion-chevron-down" ng-class="{true:'dChoose',false:'dNotChoose'}[difShow[0]]"></i>
+          <i style="font-size: 0.25rem" class="ion-chevron-up" ng-class="{true:'dChoose',false:'dNotChoose'}[difShow[1]]"></i>
+        </span>
+      </div>
+      <div class="col choose-Item touchItem" ng-click="">从新到旧</div>
+      <div class="col choose-Item touchItem" ng-click="popChan()">
+        <span>人气</span>
+        <span class="popIcon">
+          <div class="ion-arrow-up-b" style="height: 0.2rem;" ng-class="{0:'',1:'popActive'}[popSort[0]]"></div>
+          <div class="ion-arrow-down-b" ng-class="{0:'',1:'popActive'}[popSort[1]]"></div>
+        </span>
+      </div>
+    </div>
+  </div>
+  <ion-content scrollbar-y="false" class="classifyContent">
+    <!--默认数据列表-->
+    <div class="list classifyBody">
+      <a class="item item-thumbnail-left classify-list" href="" ng-repeat="classify in classifyData|orderBy:popOrder">
+        <img ng-src="{{classify.image}}" style="width: 1.5rem;height: 1.5rem;margin: 1% 0 0 3%;">
+        <div ng-bind="classify.title" class="classify-title"></div>
+        <span ng-bind="classify.difficulty" class="classify-dif"></span>
+        <span style="font-size: 16px">人气：</span>
+        <span ng-bind="classify.pop" class="classify-pop"></span>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
+
+

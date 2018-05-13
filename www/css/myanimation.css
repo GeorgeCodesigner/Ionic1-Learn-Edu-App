@@ -1,0 +1,150 @@
+/*触摸波纹样式效果*/
+.waveShow{
+  animation: sploosh 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-animation: sploosh 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+@keyframes sploosh {
+  0% {
+    box-shadow: 0 0 0 0px #888888;
+    background: #888888;
+  }
+  100% {
+    box-shadow: 0 0 0 1px rgba(66, 166, 223, 0);
+    background: rgba(66, 166, 223, 0);
+  }
+}
+@-webkit-keyframes sploosh {
+  0% {
+    box-shadow: 0 0 0 0px #888888;
+    background: #888888;
+  }
+  100% {
+    box-shadow: 0 0 0 1px rgba(66, 166, 223, 0);
+    background: rgba(66, 166, 223, 0);
+  }
+}
+/*对话框向上进入的效果*/
+.showUp{
+  animation:up 1s ease-out;
+  -webkit-animation:up 1s ease-out;
+}
+@keyframes up {
+  from {bottom:-100%;}
+  to {bottom: 0;}
+}
+@-webkit-keyframes up {
+  from {bottom:-100%;}
+  to {bottom: 0;}
+}
+/*对话框向下退出的效果*/
+.showDown{
+  animation:down 1s ease-out;
+  -webkit-animation:down 1s ease-out;
+}
+@keyframes down {
+  from {bottom:0;}
+  to {bottom: -100%;}
+}
+@-webkit-keyframes down {
+  from {bottom:0;}
+  to {bottom: -100%;}
+}
+/*无限旋转的效果*/
+.infiRotate{
+  animation:infi_rotate 1s linear infinite;
+  -webkit-animation:infi_rotate 1s linear infinite;
+}
+@keyframes infi_rotate {
+  0% {transform:rotate(0deg);}
+  50% {transform:rotate(180deg);}
+  100% {transform:rotate(360deg);}
+}
+@-webkit-keyframes infi_rotate {
+  0% {-webkit-transform:rotate(0deg);}
+  50% {-webkit-transform:rotate(180deg);}
+  100% {-webkit-transform:rotate(360deg);}
+}
+/*学习卡片往右边退出的效果*/
+.slideOutRight{
+  animation:slide_out_right 3s linear ;
+  -webkit-animation:slide_out_right 3s linear ;
+}
+@keyframes slide_out_right {
+  0% {transform:scale(1,1);left:0;opacity: 1}
+  20% {transform:scale(0.95,0.95);left:1.2rem;opacity: 0.8}
+  40% {transform:scale(0.9,0.9);left:2.4rem;opacity: 0.6}
+  60% {transform:scale(0.85,0.85);left:3.6rem;opacity: 0.4}
+  80% {transform:scale(0.8,0.8);left:4.8rem;opacity: 0.2}
+  100% {transform:scale(0.75,0.75);left:6rem;opacity: 0}
+}
+@-webkit-keyframes slide_out_right {
+  0% {-webkit-transform:scale(1,1);left:0;opacity: 1}
+  20% {-webkit-transform:scale(0.95,0.95);left:1.2rem;opacity: 0.8}
+  40% {-webkit-transform:scale(0.9,0.9);left:2.4rem;opacity: 0.6}
+  60% {-webkit-transform:scale(0.85,0.85);left:3.6rem;opacity: 0.4}
+  80% {-webkit-transform:scale(0.8,0.8);left:4.8rem;opacity: 0.2}
+  100% {-webkit-transform:scale(0.75,0.75);left:6rem;opacity: 0}
+}
+/*学习卡片往左边退出的效果*/
+.slideOutLeft{
+  animation:slide_out_left 3s linear;
+  -webkit-animation:slide_out_left 3s linear;
+}
+@keyframes slide_out_left {
+  0% {transform:scale(1,1);left:0;opacity: 1}
+  20% {transform:scale(0.95,0.95);left:-1.2rem;opacity: 0.8}
+  40% {transform:scale(0.9,0.9);left:-2.4rem;opacity: 0.6}
+  60% {transform:scale(0.85,0.85);left:-3.6rem;opacity: 0.4}
+  80% {transform:scale(0.8,0.8);left:-4.8rem;opacity: 0.2}
+  100% {transform:scale(0.75,0.75);left:-6rem;opacity: 0}
+}
+@-webkit-keyframes slide_out_left {
+  0% {-webkit-transform:scale(1,1);left:0;opacity: 1}
+  20% {-webkit-transform:scale(0.95,0.95);left:-1.2rem;opacity: 0.8}
+  40% {-webkit-transform:scale(0.9,0.9);left:-2.4rem;opacity: 0.6}
+  60% {-webkit-transform:scale(0.85,0.85);left:-3.6rem;opacity: 0.4}
+  80% {-webkit-transform:scale(0.8,0.8);left:-4.8rem;opacity: 0.2}
+  100% {-webkit-transform:scale(0.75,0.75);left:-6rem;opacity: 0}
+}
+/*学习卡片从左边进入的效果*/
+.slideInLeft{
+  animation:slide_in_left 3s linear ;
+  -webkit-animation:slide_in_left 3s linear ;
+}
+@keyframes slide_in_left {
+  0% {transform:scale(0.75,0.75);left:0;opacity: 0}
+  20% {transform:scale(0.8,0.8);left:1.3rem;opacity: 0.2}
+  40% {transform:scale(0.85,0.85);left:2.6rem;opacity: 0.4}
+  60% {transform:scale(0.9,0.9);left:3.9rem;opacity: 0.6}
+  80% {transform:scale(0.95,0.95);left:5.2rem;opacity: 0.8}
+  100% {transform:scale(1,1);left:6.5rem;opacity: 1}
+}
+@-webkit-keyframes slide_in_left {
+  0% {-webkit-transform:scale(0.75,0.75);left:0;opacity: 0}
+  20% {-webkit-transform:scale(0.8,0.8);left:1.3rem;opacity: 0.2}
+  40% {-webkit-transform:scale(0.85,0.85);left:2.6rem;opacity: 0.4}
+  60% {-webkit-transform:scale(0.9,0.9);left:3.9rem;opacity: 0.6}
+  80% {-webkit-transform:scale(0.95,0.95);left:5.2rem;opacity: 0.8}
+  100% {-webkit-transform:scale(1,1);left:6.5rem;opacity: 1}
+}
+/*学习卡片从右边进入的效果*/
+.slideInRight{
+  animation:slide_in_right 3s linear infinite;
+  -webkit-animation:slide_in_right 3s linear infinite;
+}
+@keyframes slide_in_right {
+  0% {transform:scale(0.75,0.75);left:0;opacity: 0}
+  20% {transform:scale(0.8,0.8);left:-1.3rem;opacity: 0.2}
+  40% {transform:scale(0.85,0.85);left:-2.6rem;opacity: 0.4}
+  60% {transform:scale(0.9,0.9);left:-3.9rem;opacity: 0.6}
+  80% {transform:scale(0.95,0.95);left:-5.2rem;opacity: 0.8}
+  100% {transform:scale(1,1);left:-6.5rem;opacity: 1}
+}
+@-webkit-keyframes slide_in_right {
+  0% {-webkit-transform:scale(0.75,0.75);left:0;opacity: 0}
+  20% {-webkit-transform:scale(0.8,0.8);left:-1.3rem;opacity: 0.2}
+  40% {-webkit-transform:scale(0.85,0.85);left:-2.6rem;opacity: 0.4}
+  60% {-webkit-transform:scale(0.9,0.9);left:-3.9rem;opacity: 0.6}
+  80% {-webkit-transform:scale(0.95,0.95);left:-5.2rem;opacity: 0.8}
+  100% {-webkit-transform:scale(1,1);left:-6.5rem;opacity: 1}
+}

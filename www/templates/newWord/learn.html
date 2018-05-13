@@ -1,0 +1,216 @@
+<ion-view hide-back-button="true" hide-nav-bar="true" hide-tabs="true">
+  <style type="text/css">
+    /*头部*/
+    .nwLearn-header{
+      padding:0;
+      text-align: center;
+      height: 0.88rem;
+      line-height: 0.88rem;
+    }
+    .nwLearn-Item{
+      font-size: 0.36rem;
+      width: 1.5rem;
+    }
+    .nwlContent{
+      margin-top: 0.88rem;
+      width:100%;
+    }
+    .nwlCardWrap{
+      margin: 1.5rem 0.5rem 0 0.5rem;
+      width: 100%;
+      height:10.5rem;
+      padding: 0;
+      position: relative;
+    }
+    .nwlcfLeftIn{
+      width:5.5rem;
+      height:100%;
+      border: 1px solid #ffffff;
+      position: absolute;
+      margin-left: -6rem;
+    }
+    .nwlCardFontCur{
+      width:5.5rem;
+      height:100%;
+      border: 1px solid #ffffff;
+      position: absolute;
+      margin-left: 0.5rem;
+    }
+    .nwlcfRightIn{
+      width:5.5rem;
+      height:100%;
+      border: 1px solid #ffffff;
+      position: absolute;
+      margin-left: 7rem;
+    }
+    .nwlcMain{
+      width:100%;
+      height:7rem;
+      background-color: lightgray;
+      position: relative;
+    }
+    .nwlcSoundWrap{
+      position: absolute;
+      right: 0.1rem;
+      width: 1.2rem;
+      background-color: rgba(56,126,245,1);
+      font-size: 0.36rem;
+      color: #ffffff;
+      top: 0.1rem;
+      text-align: center;
+      height: 0.6rem;
+      line-height: 0.6rem;
+    }
+    .nwlcChi{
+      width: 100%;
+      font-size: 0.5rem;
+      text-align: center;
+      padding: 3rem 0 1rem 0;
+    }
+    .nwlcEng{
+      width: 100%;
+      font-size: 0.5rem;
+      text-align: center;
+    }
+    .nwlcBot{
+      width:100%;
+      height:1.5rem;
+      background-color: rgba(56,126,245,1);
+      text-align: center;
+      color: #ffffff;
+      position: relative;
+    }
+    .nwlcbLeft{
+      width:1rem;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+    .nwlcbMid{
+      width:3.5rem;
+      height: 100%;
+      position: absolute;
+      left: 1rem;
+      font-size: 0.6rem;
+      line-height: 1.5rem;
+    }
+    .nwlcbRight{
+      width:1rem;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+    .nwlcExpla{
+      width:100%;
+      height:2rem;
+      position: relative;
+      margin-top: 0.2rem;
+      font-size: 0.32rem;
+    }
+  </style>
+  <div class="bar bar-header bar-positive nwLearn-header">
+      <span class="nwLearn-Item touchItem" ng-click="closeLearn()">关闭</span>
+  </div>
+  <ion-content class="nwlContent" scrollbar-y="false" has-bouncing="false">
+    <div class="nwlCardWrap">
+      <!--卡片前景(左进)-->
+      <span class="nwlcfLeftIn">
+        <!--卡片主要内容-->
+        <div class="nwlcMain">
+          <div class="nwlcSoundWrap touchItem">
+            <span>发音</span>
+          </div>
+          <div class="nwlcChi">
+            <span ng-bind="nwList[preIndex].chinese"></span>
+          </div>
+          <div class="nwlcEng">
+            <span ng-bind="nwList[preIndex].english"></span>
+          </div>
+        </div>
+        <!--卡片底部内容-->
+        <div class="nwlcBot">
+          <span class="nwlcbLeft touchItem" ng-click="nextCard()">
+            <span class="ion-ios-arrow-left"></span>
+          </span>
+          <span class=" nwlcbMid touchItem">
+            <span class="ion-ios-circle-outline"></span>
+          </span>
+          <span class=" nwlcbRight touchItem" ng-click="preCard()">
+            <span class="ion-ios-arrow-right"></span>
+          </span>
+        </div>
+        <!--卡片文字解释内容-->
+        <div class="nwlcExpla">
+          <span ng-bind="nwList[preIndex].explanation"></span>
+        </div>
+      </span>
+      <!--卡片前景(当前)-->
+      <span class="nwlCardFontCur">
+        <!--卡片主要内容-->
+        <div class="nwlcMain">
+          <div class="nwlcSoundWrap touchItem">
+            <span>发音</span>
+          </div>
+          <div class="nwlcChi">
+            <span ng-bind="nwList[curIndex].chinese"></span>
+          </div>
+          <div class="nwlcEng">
+            <span ng-bind="nwList[curIndex].english"></span>
+          </div>
+        </div>
+        <!--卡片底部内容-->
+        <div class="nwlcBot">
+          <span class="nwlcbLeft touchItem" ng-click="nextCard()">
+            <span class="ion-ios-arrow-left"></span>
+          </span>
+          <span class=" nwlcbMid touchItem">
+            <span class="ion-ios-circle-outline"></span>
+          </span>
+          <span class=" nwlcbRight touchItem" ng-click="preCard()">
+            <span class="ion-ios-arrow-right"></span>
+          </span>
+        </div>
+        <!--卡片文字解释内容-->
+        <div class="nwlcExpla">
+          <span ng-bind="nwList[curIndex].explanation"></span>
+        </div>
+      </span>
+      <!--卡片前景(右进)-->
+      <span class="nwlcfRightIn">
+        <!--卡片主要内容-->
+        <div class="nwlcMain">
+          <div class="nwlcSoundWrap touchItem">
+            <span>发音</span>
+          </div>
+          <div class="nwlcChi">
+            <span ng-bind="nwList[nextIndex].chinese"></span>
+          </div>
+          <div class="nwlcEng">
+            <span ng-bind="nwList[nextIndex].english"></span>
+          </div>
+        </div>
+        <!--卡片底部内容-->
+        <div class="nwlcBot">
+          <span class="nwlcbLeft touchItem" ng-click="nextCard()">
+            <span class="ion-ios-arrow-left"></span>
+          </span>
+          <span class=" nwlcbMid touchItem">
+            <span class="ion-ios-circle-outline"></span>
+          </span>
+          <span class=" nwlcbRight touchItem" ng-click="preCard()">
+            <span class="ion-ios-arrow-right"></span>
+          </span>
+        </div>
+        <!--卡片文字解释内容-->
+        <div class="nwlcExpla">
+          <span ng-bind="nwList[nextIndex].explanation"></span>
+        </div>
+      </span>
+    </div>
+  </ion-content>
+</ion-view>
+<!--style="transform: translateX(0.5rem);"-->

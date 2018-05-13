@@ -1,0 +1,109 @@
+<ion-view hide-back-button="true" hide-nav-bar="true" hide-tabs="true">
+  <style type="text/css">
+    .batch-header{
+      padding:0;
+      background-color: rgba(56,126,245,1);
+      text-align: center;
+      height: 0.88rem;
+      position: absolute;
+      z-index: 100;
+      line-height: 0.88rem;
+    }
+    .batch-title{
+      font-size: 0.4rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 6rem;
+      color: #ffffff;
+      padding-left: 0.75rem;
+    }
+    .batch-cancel{
+      font-size: 0.36rem;
+      width: 1.5rem;
+      color: #edeaeb
+    }
+    .batch-choose{
+      top: 0.88rem;
+      padding:0;
+      text-align: center;
+      height: 0.7rem;
+      font-size: 0.24rem
+    }
+    #batch-list{
+      top: 1.58rem;
+      position: absolute;
+      width: 100%;
+      padding: 0 0.5rem;
+      margin-bottom: 0.88rem;
+      overflow: scroll;
+    }
+    .dlcIcon{
+      width: 10%;
+      text-align: center;
+      line-height: 2.1;
+      color: rgba(56,126,245,1);
+    }
+    .batch_title{
+      margin-left: 0.3rem;
+      font-size: 0.36rem;
+      margin-bottom: 0.1rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      height: 0.5rem;
+    }
+    .batch_info{
+      font-size: 0.26rem;
+      margin: 0.1rem 0 0.2rem 0.3rem;
+    }
+    .batch-item{
+      border:0;
+      border-bottom: solid 1px gray;
+    }
+    .batch_foot{
+      width: 50%;
+      font-size: 0.32rem;
+      line-height: 2.7;
+    }
+  </style>
+  <!--头部-->
+  <div class="row batch-header">
+    <span class="batch-title" ng-bind="totalTitle"></span>
+    <span class="batch-cancel" ng-click="cancelBatch()">取消</span>
+  </div>
+  <!--列表总操作部分-->
+  <div class="bar bar-stable batch-choose">
+    <div class="row">
+      <span style="width: 25%;line-height: 1.9;">共<span ng-bind="totalList"></span>篇</span>
+      <span style="width: 50%;"></span>
+        <span style="width: 25%;" ng-click="orderBatch()">
+          <i style="font-size: 0.3rem;" ng-class="{1:'ion-ios-arrow-thin-up',0:'ion-ios-arrow-thin-down'}[batchOrder]"></i>
+          <span>排序</span>
+        </span>
+    </div>
+  </div>
+  <!--节目详情列表-->
+  <ion-content delegate-handle="batchScroll" scrollbar-y="false" has-bouncing="true" class="newDetailCont">
+    <div id="batch-list">
+      <div style="padding:0.4rem 0 0 0;" class="row batch-item" ng-repeat="item in detailItem|orderBy:sizeOrder">
+        <span class="dlcIcon" ng-click="dlChoose(item,false)">
+          <i style="font-size: 0.5rem" ng-class="{1:'ion-ios-circle-filled',0:'ion-ios-circle-outline'}[dlFlag[item.title]]"></i>
+        </span>
+        <span style="width: 90%">
+          <div class="batch_title" ng-bind="item.title"></div>
+          <div class="batch_info">
+            <span style="width:30%;margin-right: 0.5rem;" ng-bind="item.pubdate"></span>
+            <span style="width:40%;margin-right: 0.5rem;"><span ng-bind="item.size"></span>M</span>
+            <span style="width:30%">时长：<span ng-bind="item.duration|changeDur"></span></span>
+          </div>
+        </span>
+      </div>
+    </div>
+  </ion-content>
+  <!--底部按钮-->
+  <div class="row bar bar-footer newdetail-foot">
+    <span class="batch_foot" ng-click="batchAll()">全选</span>
+    <span class="batch_foot" ng-click="">下载(<span ng-bind="dlCount"></span>)</span>
+  </div>
+</ion-view>

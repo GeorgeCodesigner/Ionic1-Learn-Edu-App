@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!--<meta http-equiv="Cache-Control" content="max-age=7200" />-->
+    <title>学习教育类App</title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/myanimation.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/newWord.css" rel="stylesheet">
+    <link href="css/my.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- ngCordova使用插件-->
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <!-- jquery -->
+    <script src="lib/jquery-2.1.1.min.js"></script>
+    <!-- md5 加密方法-->
+    <script src="lib/md5.js"></script>
+    <!-- mockjs使用插件-->
+    <script src="lib/mockjs/dist/mock.js"></script>
+    <!--获取设备ip地址的插件-->
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+  </head>
+  <body ng-app="starter">
+      <ion-nav-bar class="bar bar-positive">
+      </ion-nav-bar>
+      <ion-nav-view></ion-nav-view>
+      <!--&lt;!&ndash;底部tab栏&ndash;&gt;
+      <div class="row bar bar-stable bar-footer tabWrap hideTab">
+        <span id="homeWrap" class="selectTab" ng-click="chooseHome()">
+          <div class="ion-compass tabIcon"></div>
+          <div class="tabWord">发现</div>
+        </span>
+        <span id="nwordWrap" class="noSelectTab" ng-click="chooseNword()">
+          <div class="ion-ios-book-outline tabIcon"></div>
+          <div class="tabWord">词汇</div>
+        </span>
+        <span id="myWrap" class="noSelectTab" ng-click="chooseMy()">
+          <div class="ion-ios-person-outline tabIcon"></div>
+          <div class="tabWord">我的</div>
+        </span>
+      </div>-->
+  </body>
+  <!-- common js -->
+  <script src="js/common/commonDirective.js"></script>
+  <script src="js/common/config.js"></script>
+  <script src="js/common/commonFunc.js"></script>
+  <script src="js/common/commonService.js"></script>
+  <script src="js/common/commonFilter.js"></script>
+  <!-- my app's js -->
+  <script src="js/index.js"></script>
+  <script src="js/router.js"></script>
+  <!-- home js -->
+  <script src="js/home/homeControllers.js"></script>
+  <script src="js/home/homeServices.js"></script>
+  <!-- newWord js -->
+  <script src="js/newWord/newWordControllers.js"></script>
+  <script src="js/newWord/newWordServices.js"></script>
+  <!-- my js -->
+  <script src="js/my/myControllers.js"></script>
+  <script src="js/my/myServices.js"></script>
+</html>

@@ -1,0 +1,154 @@
+<ion-view hide-back-button="true" hide-nav-bar="true" hide-tabs="true">
+  <style type="text/css">
+    /*头部*/
+    .login-header{
+      padding:0;
+      text-align: center;
+      height: 0.88rem;
+      line-height: 0.88rem;
+    }
+    .login-Item{
+      width: 1.5rem;
+      font-size: 0.36rem;
+    }
+    .login-Title{
+      width: 6rem;
+      font-size: 0.36rem;
+      margin-left: -0.75rem;
+    }
+    /*内容*/
+    .loginContent{
+      position: absolute;
+      top:1.58rem;
+      width:100%;
+    }
+    .logo{
+      width: 100%;
+      height: 4rem;
+    }
+    .logo img{
+      width: 100%;
+      height: 100%;
+    }
+    .phoneItem{
+      margin-top: 1rem;
+    }
+    .phoneItem input{
+      height: 0.8rem;
+      margin-left: 1.25rem;
+      width: 5rem;
+      padding-left: 0.2rem;
+      font-size: 0.36rem;
+      position: absolute;
+      top: 5rem;
+      border: 1px solid gray;
+      border-color: #cccccc;
+    }
+    #pclear{
+      position: absolute;
+      font-size: 0.5rem;
+      color: gray;
+      right: 1.4rem;
+      top: 5.15rem;
+      display: none;
+    }
+    .vcItem{
+      margin-top: 0.5rem;
+    }
+    #verifycode{
+      position: absolute;
+      top: 6.3rem;
+      height: 0.8rem;
+      margin-left: 1.25rem;
+      width: 2.7rem;
+      padding-left: 0.2rem;
+      font-size: 0.36rem;
+      border: 1px solid gray;
+      border-color: #cccccc;
+    }
+    #cclear{
+      position: absolute;
+      font-size: 0.5rem;
+      color: gray;
+      right: 3.7rem;
+      top: 6.45rem;
+      z-index: 100;
+      display: none;
+    }
+    #codeBut{
+      height: 0.8rem;
+      width: 2rem;
+      text-align: center;
+      font-size: 0.28rem;
+      position: absolute;
+      right: 1.25rem;
+      border: 0;
+      top: 6.3rem;
+      color:white;
+      background-color: #cccccc;
+    }
+    .error{
+      margin-top: 2%;
+      margin-left: 1.25rem;
+      position: absolute;
+      top: 7.1rem;
+    }
+    #errMsg{
+      font-size: 0.32rem;
+      color: red;
+      visibility: hidden;
+    }
+    .submitItem{
+      margin-top: 4%;
+      position: absolute;
+      top: 7.6rem;
+    }
+    #submitBut{
+      height: 0.8rem;
+      margin-left: 1.25rem;
+      width: 5rem;
+      font-size: 0.36rem;
+
+      border: 0;
+      background-color: #387ef5;
+    }
+    .noLogin{
+      margin-top: 4%;
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      top: 8.6rem;
+    }
+    .noLogin span{
+      font-size: 0.32rem;
+    }
+  </style>
+  <div class="bar bar-header bar-positive login-header">
+      <span class=" login-Item touchItem" ng-click="goback()">返回</span>
+      <span class=" login-Title">登录萌兔日语</span>
+  </div>
+  <ion-content scrollbar-y="false" class="loginContent">
+    <div class="logo">
+      <img src="img/logo.jpg" alt="logo"/>
+    </div>
+    <div class="phoneItem">
+      <input style="padding-top: 0.2rem;" onfocus="focusInput(this.id)" onblur="blurInput(this.id)" id="phone" placeholder="手机号" name="phone" type="number" ng-model="user.phoneNo">
+      <i id="pclear" class="ion-ios-close" ng-click="clear('phone')"></i>
+    </div>
+    <div class="vcItem">
+      <input style="padding-top: 0.2rem;" onfocus="focusInput(this.id)" onblur="blurInput(this.id)" id="verifycode" placeholder="验证码" name="verifycode" type="text" ng-model="user.verifycode">
+      <i id="cclear" class="ion-ios-close" ng-click="clear('verifycode')"></i>
+      <input disabled="disabled" class="touchItem" id="codeBut" type="button" value="获取验证码" ng-click="getCode()">
+    </div>
+    <div class="error">
+      <span id="errMsg">登录失败咯～</span>
+    </div>
+    <div class="submitItem">
+      <input class="touchItem" id="submitBut" value="登录" name="submit" type="submit" ng-click="submit()">
+    </div>
+    <div class="noLogin">
+      <span ng-click="noLogin()">随便看看</span>
+    </div>
+  </ion-content>
+</ion-view>
+

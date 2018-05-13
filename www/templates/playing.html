@@ -1,0 +1,115 @@
+<ion-view hide-back-button="true" hide-nav-bar="true" hide-tabs="true">
+  <style type="text/css">
+    /*头部*/
+    .playing-header{
+      padding:0;
+      text-align: center;
+      height: 0.88rem;
+      line-height: 0.88rem;
+      font-size: 0.36rem;
+    }
+    .playing-bando{
+      width: 1.5rem;
+    }
+    .playing-title{
+      width: 4.5rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .playingContent{
+      position: relative;
+      top:3rem;
+      width:100%;
+    }
+    /*操作弹窗*/
+    .popPart{
+      margin: 0;
+      width: 2.5rem;
+      height: 2.8rem;
+    }
+    .popPart ion-item{
+      padding-bottom: 0.15rem;
+      padding-top: 0.15rem;
+      border:0;
+    }
+    #wordExpBox{
+      z-index: 100;
+      top: 0;
+      position: absolute;
+      width:100%;
+      height:3rem;
+      background-color: #b1ad76;
+    }
+    #closeExp{
+      position: absolute;
+      right: 0.2rem;
+      top: 3%;
+    }
+    #wtitleBox{
+      float: left;
+      margin: 6% 0 3% 0.2rem;
+    }
+    .wtitle1{
+      font-size: 0.5rem;
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+    .wtitle2{
+      font-size: 0.4rem;
+      margin-right: 0.5rem;
+    }
+    .wtitle3{
+      font-size: 0.3rem;
+    }
+    /*中间播放的文本内容*/
+    .audioTitle{
+      font-size: 0.36rem;
+      font-weight: bold;
+    }
+    #audioText >div{
+      transform:translate3d(0px, 0px, 0px) scale(1);
+      transition:transform 1s;
+      -moz-transition:transform 1s; /* Firefox 4 */
+      -webkit-transition:transform 1s; /* Safari and Chrome */
+      -o-transition:transform 1s; /* Opera */
+    }
+    #audioCont{
+      padding: 0;
+      border: 0;
+      white-space: inherit;
+      padding-top: 5%;
+      line-height: 1.5;
+    }
+    #audioCont li{
+      margin-bottom: 3%;
+    }
+    #audioCont button{
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+    }
+    .activeFont button{
+      color:#0CBB08
+    }
+  </style>
+  <!--头部-->
+  <div class="bar bar-header bar-positive playing-header">
+      <span class="playing-bando touchItem" ng-click="goback()">返回</span>
+      <div class="playing-title" ng-bind="title"></div>
+      <span class="playing-bando touchItem" ng-click="operateOpen($event)">操作</span>
+  </div>
+  <div style="display: none" id="wordExpBox">
+    <i id="closeExp" class="ion-close-round" ng-click="closeExp()"></i>
+  </div>
+  <!--中间播放的文本内容-->
+  <ion-content id="audioText" padding="true" class="playingContent" scrollbar-y="true">
+    <div ng-bind="title" class="audioTitle"></div>
+    <ul id="audioCont"></ul>
+  </ion-content>
+  <!--底部的播放控件-->
+  <ion-footer-bar align-title="left" class="bar-stable" style="height: 1.6rem;">
+    <audio-player></audio-player>
+  </ion-footer-bar>
+</ion-view>
+

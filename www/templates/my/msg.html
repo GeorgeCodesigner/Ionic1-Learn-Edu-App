@@ -1,0 +1,26 @@
+<ion-view hide-back-button="true" hide-nav-bar="true" hide-tabs="true">
+  <style type="text/css">
+    /*头部*/
+    .msg-header{
+      padding:0;
+      text-align: center;
+      height: 0.88rem;
+      line-height: 0.88rem;
+      font-size: 0.36rem;
+    }
+    .msg-Item{
+      width: 1.5rem;
+    }
+    .msg-Title{
+      width: 6rem;
+      margin-left: -0.75rem;
+    }
+  </style>
+  <div class="bar bar-header bar-positive msg-header">
+      <span class=" msg-Item touchItem" ng-click="goback()">返回</span>
+      <span class=" msg-Title">消息</span>
+  </div>
+  <ion-content>
+    消息
+  </ion-content>
+</ion-view>

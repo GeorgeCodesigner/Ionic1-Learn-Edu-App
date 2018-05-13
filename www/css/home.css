@@ -1,0 +1,192 @@
+/*下拉刷新部分*/
+#refresh{
+  position: absolute;
+  top: -1.1rem;
+  z-index: 200;
+  text-align: center;
+  left: 50%;
+}
+#refreshCont{
+  width: 0.9rem;
+  margin-left: -0.45rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 1px 2px 9px #888888;
+  padding: 0.15rem 0 0.15rem 0;
+}
+#refreshIcon{
+  color: rgba(56,126,245,1);
+}
+/*其他部分*/
+.headerContain{
+  padding: 0;
+  text-align: center;
+  height: 0.88rem;
+  position: absolute;
+  z-index: 100;
+  background-color: transparent;
+  line-height: 0.88rem;
+}
+.headerItem{
+  padding:0;
+  text-align: center;
+  margin: 0 0.15rem;
+}
+.headerSear{
+  font-size: 0.36rem;
+}
+.search{
+  position: relative;
+  padding: 0;
+  margin: 1.5% 0;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+}
+.searIcon{
+  line-height: 1.2;
+  position: absolute;
+  left: 0.1rem;
+  color: #ffffff;
+}
+.searchInput{
+  position: absolute;
+  line-height: 0.55rem;
+  left: 0.5rem;
+  outline: none;
+  background: transparent;
+  border: 0;
+  color: #ffffff;
+}
+.bar-normal{
+  color: white;
+}
+.bar-bold{
+  font-weight: bold;
+  color: white;
+}
+.homeContent{
+  position: absolute;
+  width:100%;
+  bottom: 49px;
+}
+a{
+  color:transparent;
+}
+.playing{
+  background-color: #ffffff;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 100;
+  top: 80%;
+  right: 0.375rem;
+  box-shadow: 1px 2px 9px #888888;
+  width: 1.05rem;
+  text-align: center;
+  padding: 0.15rem;
+}
+/*轮播图样式*/
+.slideCont{
+  height: 3.88rem;
+}
+.slideImg{
+  width:100%;
+  height: 100%;
+}
+/*最新部分样式*/
+.newPart{
+  width:100%;
+  position: absolute;
+  top: 3.88rem;
+  height: 4.08rem;
+}
+.newPartHead{
+  padding:0;
+  text-align: center;
+  height: 0.88rem;
+}
+.newTitle{
+  font-size: 0.36rem;
+  line-height: 2.3;
+  text-align: center;
+  padding: 0;
+}
+.newRight{
+  font-size: 0.32rem;
+  line-height: 2.8;
+  text-align: center;
+  padding: 0;
+}
+.newPartBody{
+  position: relative;
+  top: 0.88rem;
+  width:100%;
+  height:3.2rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.newPartBody img{
+  border-radius: 4px;
+  margin: 4% 0 0 7%;
+  width:25%;
+  height:100%;
+}
+.scroll-title{
+  font-size: 0.36rem;
+  color:#000000;
+  position: absolute;
+  bottom: -21%;
+  margin-left: -1.95rem;
+}
+.scroll-dif{
+  font-size: 0.32rem;
+  color:#000000;
+  position: absolute;
+  bottom: -39%;
+  margin-left: -1.95rem;
+}
+/*热门部分样式*/
+.hotPart{
+  width:100%;
+  position: absolute;
+  top: 7.96rem;
+}
+.hotPartHead{
+  padding:0;
+  text-align: center;
+  height: 0.88rem;
+}
+.hotTitle{
+  font-size: 0.36rem;
+  line-height: 2.3;
+  text-align: center;
+  padding: 0;
+}
+.hotRight{
+  font-size: 0.32rem;
+  line-height: 2.8;
+  text-align: center;
+  padding: 0;
+}
+.hotPartBody{
+  position: relative;
+  top: 0.88rem;
+  width:100%;
+}
+.item-avatar{
+  padding-left: 1.8rem;
+  border:0
+}
+.item-avatar > img:first-child{
+  max-width: 1.2rem;
+  max-height: 1.2rem;
+  position: absolute;
+  top: 9%;
+  border-radius: 0;
+}
+.hot-title{
+  font-size: 0.36rem;
+}
+.hot-dif{
+  font-size: 0.32rem;
+  margin-top: 2%;
+}

@@ -1,0 +1,75 @@
+<ion-view hide-back-button="true" hide-nav-bar="true" hide-tabs="false">
+  <!--自定义下拉刷新-->
+  <div id="refresh">
+    <div id="refreshCont">
+      <i id="refreshIcon" style="font-size: 0.6rem;opacity: 0" class="ion-android-refresh"></i>
+    </div>
+  </div>
+  <!--头部-->
+  <div class="row headerContain">
+    <!--分类、搜索-->
+    <span class="col-10 headerItem headerSear" ng-click="goClassify()">分类</span>
+      <span class="col search" ng-click="goSearch()">
+        <i class="ion-ios-search searIcon" style="font-size: 0.5rem"></i>
+        <input placeholder="请输入节目名称" class="searchInput" value="请输入节目名称">
+      </span>
+    <span class="col-10 headerItem headerSear " ng-click="goSearch()">搜索</span>
+  </div>
+  <div class="playing touchItem" ng-click="goPlaying()">正在播放</div>
+  <!--内容-->
+  <ion-content on-scroll-complete="HListChange()" delegate-handle="homeScroll" class="homeContent" scrollbar-y="true" has-bouncing="false">
+    <!--轮播图-->
+    <ion-slide-box auto-play="true" does-continue="true" show-pager="true" delegate-handle="sliderBan">
+      <ion-slide ng-repeat="slide in slideBox" class="slideCont">
+        <a href=""><img class="slideImg" ng-src="{{slide.image}}" /></a>
+      </ion-slide>
+    </ion-slide-box>
+    <!--最新部分-->
+    <div class="newPart">
+      <div on-swipe-left="onSwipeLeft()" class="bar bar-stable newPartHead">
+        <div class="row" style="padding: 0;">
+          <div class="col-20 newTitle">最新</div>
+          <div class="col"></div>
+          <div ng-click="goAllNew()" class="col-20 newRight touchItem">
+            全部
+            <i class="ion-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+      <div class="newPartBody">
+        <ion-scroll delegate-handle="newScroll" direction="x" scrollbar-x="false" style="height:100%">
+          <span ng-repeat="scroll in newData" ng-click="goNewDet($index)">
+            <img ng-src="{{scroll.image}}">
+            <span ng-bind="scroll.title" class="scroll-title"></span>
+            <span ng-bind="scroll.difficulty" class="scroll-dif"></span>
+          </span>
+        </ion-scroll>
+      </div>
+    </div>
+    <!--热门部分-->
+    <div on-swipe-left="onSwipeLeft()" class="hotPart">
+      <div class="bar bar-stable hotPartHead">
+        <div class="row" style="padding: 0;">
+          <div class="col-20 hotTitle">热门</div>
+          <!--<div class="col"></div>
+          <div ng-click="goAllHot()" class="col-20 hotRight touchItem">
+            全部
+            <i class="ion-chevron-right"></i>
+          </div>-->
+        </div>
+      </div>
+      <div class="hotPartBody">
+        <div class="list">
+          <a style="height: 1.5rem;" class="item item-avatar touchItem" href="" ng-repeat="list in hotData" >
+            <img ng-src="{{list.image}}">
+            <div ng-bind="list.title" class="hot-title"></div>
+            <div ng-bind="list.difficulty" class="hot-dif"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>
+
+

@@ -1,0 +1,66 @@
+<ion-view hide-back-button="true" hide-nav-bar="true" on-swipe-right="onSwipeRight()" hide-tabs="false">
+  <ion-content has-bouncing="false" scrollbar-y="false" class="myContent">
+    <div class="bar bar-positive my-abstract">
+      <!--消息、设置-->
+      <div class="row my-msgSet">
+        <div class="col"></div>
+        <span class="col-20 my-Item touchItem" ng-click="goMsg()">消息</span>
+        <span class="col-20 my-Item touchItem" ng-click="goSetting()">设置</span>
+      </div>
+      <!--概要信息-->
+      <div class="row user-abstra" ng-click="editModalOpen()">
+        <div class="col-30" style="margin-right: 0.6rem;">
+          <img class="avatarImg" ng-src="{{userInfo.avatar}}" alt="avatar"/>
+        </div>
+        <div class="col-60 abstrData">
+          <div ng-bind="userInfo.nickname"></div>
+          <span>精听 </span><span ng-bind="listenTime"></span><span>h</span><span> | </span>
+          <span>词汇 </span><span ng-bind="vocab"></span>
+        </div>
+        <div class="col-30 toDetail">
+          <i class="ion-chevron-right"></i>
+        </div>
+      </div>
+      <!--历史、收藏、下载-->
+      <div class="row my-hcd">
+        <div class="col touchItem" ng-click="goHisRec()">
+          <img class="hisRecImg" src="img/1.png" alt="hisRecImg"/>
+          <div style="font-size: 0.36rem;">历史</div>
+        </div>
+        <div class="col touchItem" ng-click="goCol()">
+          <img class="colImg" src="img/1.png" alt="colImg"/>
+          <div style="font-size: 0.36rem;">收藏</div>
+        </div>
+        <div class="col touchItem" ng-click="goDownl()">
+          <img class="downlImg" src="img/1.png" alt="downlImg"/>
+          <div style="font-size: 0.36rem;">下载</div>
+        </div>
+      </div>
+    </div>
+    <!--我的精听记录-->
+    <div class="listenPart">
+      <div class="bar lisPartHead">
+          <span class="lisTitle">
+            <span>我的精听记录（共</span><span ng-bind="lisTotal"></span><span>篇）</span>
+          </span>
+          <span class="lisMid"></span>
+          <span class="lisRight touchItem">
+            查看全部
+          </span>
+      </div>
+      <div class="lisPartBody">
+        <div class="list">
+          <a class="item lis-cont touchItem" href="" ng-repeat="list in lisData" >
+            <img ng-src="{{list.image}}">
+            <div ng-bind="list.title" class="lis-title"></div>
+            <div class="lis-sub">
+              <span>完成用时：</span><span ng-bind="list.finishTime|changeTime"></span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <span>积累生词：</span><span ng-bind="list.vocab"></span><span>个</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

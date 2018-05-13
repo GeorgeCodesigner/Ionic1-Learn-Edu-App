@@ -1,0 +1,82 @@
+<ion-view hide-back-button="true" hide-nav-bar="true" hide-tabs="true">
+  <style type="text/css">
+    /*头部*/
+    .search-header{
+      padding:0;
+      text-align: center;
+      height: 0.88rem;
+      line-height: 0.88rem;
+    }
+    .search-Item{
+      font-size: 0.36rem;
+      width: 1.5rem;
+    }
+    #searchInput{
+      width: 4.5rem;
+      font-size: 0.36rem;
+      padding: 0 0 0 5px;
+      height: 0.7rem;
+      margin-top: 0.09rem;
+    }
+    /*筛选条件*/
+    .search-choose{
+      position: relative;
+      top: 0.88rem;
+      padding:0;
+      text-align: center;
+      height: 0.7rem;
+      line-height: 0.7rem;
+    }
+    .choose-Item{
+      font-size: 0.32rem;
+      width: 50%;
+    }
+    /*内容*/
+    .searchContent{
+      position: absolute;
+      top:1.58rem;
+      width:100%;
+    }
+    .searchBody{
+      position: relative;
+      width:100%;
+
+    }
+    .search-list{
+      padding: 7% 0 3% 30%;
+      border:0
+    }
+    .search-title{
+      font-size: 0.36rem;
+      margin-bottom: 3%;
+    }
+    .search-dif{
+      font-size: 0.32rem;
+      padding-right: 12%;
+    }
+    .search-pop{
+      font-size: 0.32rem;
+    }
+  </style>
+  <div class="bar bar-header bar-positive search-header">
+      <span class=" search-Item touchItem" ng-click="goback()">返回</span>
+      <input id="searchInput" placeholder="请输入关键词" name="search" type="text" ng-model="keyword">
+      <span class=" search-Item touchItem" ng-click="cancel()">取消</span>
+  </div>
+  <span class="bar bar-stable search-choose">
+      <span class="choose-Item touchItem" ng-click="">时间</span>
+      <span class="choose-Item touchItem" ng-click="">人气</span>
+  </span>
+  <ion-content scrollbar-y="false" class="searchContent">
+    <!--默认数据列表-->
+    <div class="list searchBody">
+      <a class="item item-thumbnail-left search-list" href="" ng-repeat="search in searchData">
+        <img ng-src="{{search.image}}" style="width: 1.5rem;height: 1.5rem;margin: 1% 0 0 3%;">
+        <div ng-bind="search.title" class="search-title"></div>
+        <span ng-bind="search.difficulty" class="search-dif"></span>
+        <span style="font-size: 16px">人气：</span>
+        <span ng-bind="search.pop" class="search-pop"></span>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

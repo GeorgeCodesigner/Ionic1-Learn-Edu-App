@@ -1,0 +1,16 @@
+<ion-view hide-back-button="true" hide-nav-bar="true" hide-tabs="false" on-swipe-left="onSwipeLeft()" on-swipe-right="onSwipeRight()">
+  <div class="bar bar-header bar-positive nwHeader">
+    <span class="nwhLeft touchItem" ng-click="nwEditModalOpen()">编辑</span>
+    <span class="nwhMid">生词本</span>
+    <span class="nwhRight touchItem" ng-click="nwLearnModalOpen()">学习</span>
+  </div>
+  <ion-content class="nwContent" scrollbar-y="false" has-bouncing="false">
+    <div class="nwItem" ng-repeat="list in nwList" >
+      <span class=" nwChinese" ng-bind="list.chinese"></span>
+      <span class=" nwEnglish" ng-bind="list.english"></span>
+      <span class="nwlButton">
+        <span class="nwlbWord touchItem" ng-click="sound($index)">发音</span>
+      </span>
+    </div>
+  </ion-content>
+</ion-view>

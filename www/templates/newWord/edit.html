@@ -1,0 +1,104 @@
+<ion-view hide-back-button="true" hide-nav-bar="true" hide-tabs="true">
+  <style type="text/css">
+    /*头部*/
+    .nwEdit-header{
+      padding:0;
+      text-align: center;
+      height: 0.88rem;
+      line-height: 0.88rem;
+    }
+    .nwEdit-Item{
+      font-size: 0.36rem;
+      width: 1.5rem;
+    }
+    .nwEdit-Title{
+      font-size: 0.36rem;
+      width: 4.5rem;
+    }
+    .nwEditContent{
+      position: absolute;
+      width:100%;
+    }
+    .nweSubHead{
+      position: relative;
+      top: 0.88rem;
+      padding:0;
+      text-align: center;
+      height: 0.7rem;
+      line-height: 0.7rem;
+    }
+    .sub-Item{
+      font-size: 0.32rem;
+      width: 50%;
+    }
+    .nwEditContent{
+      bottom: 0.88rem;
+      margin-top: 1.58rem;
+      width:100%;
+      padding:0.2rem 0.4rem 0 0.4rem;
+    }
+    .nwEditItem{
+      height: 1rem;
+      width: 6.7rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      line-height: 1rem;
+      position: relative;
+    }
+    .nwEditItem input{
+      height: 1rem;
+      width: 3.35rem;
+      font-size: 0.36rem;
+      display: inline-block;
+      text-align: center;
+    }
+    .nwItemClear{
+      position: absolute;
+      font-size: 0.45rem;
+      right: 0.15rem;
+      color: gray;
+    }
+    .nwEdit-foot{
+      padding: 0;
+      text-align: center;
+      background-color: beige;
+      height: 0.88rem;
+      font-size: 0.4rem;
+      width:100%;
+      line-height: 0.88rem;
+    }
+    .nwCount{
+      width:100%;
+    }
+    .nwAdd{
+      font-size: 1.2rem;
+      position: absolute;
+      right: 0.8rem;
+      height: 100%;
+      bottom: 0.15rem;
+      color: gray;
+    }
+  </style>
+  <div class="bar bar-header bar-positive nwEdit-header">
+      <span class=" nwEdit-Item touchItem" ng-click="cancel()">取消</span>
+      <span class=" nwEdit-Title">编辑生词本</span>
+      <span class=" nwEdit-Item touchItem" ng-click="save()">完成</span>
+  </div>
+  <span class="bar bar-stable nweSubHead">
+      <span class="sub-Item">中文</span>
+      <span style="margin-right: 0.4rem;" class="sub-Item">英文</span>
+  </span>
+  <ion-content delegate-handle="nwEditScroll" has-bouncing="false" scrollbar-y="false" class="nwEditContent">
+    <div style="border-bottom: 1px solid gray" class="nwEditItem" ng-repeat="list in nwList" >
+      <input class="editChi" ng-focus="nwiFocus($index)" ng-blur="nwiBlur($index)" type="text" ng-model="list.chinese" />
+      <input style="width: 2.75rem;" ng-focus="nwiFocus($index)" ng-blur="nwiBlur($index)" type="text" ng-model="list.english" />
+      <i class="ion-ios-close nwItemClear" ng-click="clearItem($index)"></i>
+    </div>
+  </ion-content>
+  <!--底部按钮-->
+  <div class="row bar bar-footer nwEdit-foot">
+    <span class="nwCount"><span ng-bind="nwCount"></span>个词语</span>
+    <span class="ion-ios-plus-empty nwAdd" ng-click="addInput()"></span>
+  </div>
+</ion-view>

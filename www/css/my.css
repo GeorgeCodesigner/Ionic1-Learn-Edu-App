@@ -1,0 +1,110 @@
+/*头部*/
+.my-msgSet{
+  padding: 0;
+  height: 0.88rem;
+  text-align: center;
+  position: absolute;
+  line-height: 0.88rem;
+}
+.my-Item{
+  padding:0;
+  text-align: center;
+  font-size: 0.36rem;
+}
+/*内容*/
+.myContent{
+  position: absolute;
+  width:100%;
+  bottom: 0.88rem;
+}
+/*概要信息*/
+.my-abstract{
+  width: 100%;
+  height: 4.38rem;
+  padding: 0;
+}
+.user-abstra{
+  padding: 0 0.5rem 0 0.5rem;
+  position: absolute;
+  top: 1.5rem;
+}
+.avatarImg{
+  border-radius: 50%;
+  width: 1.2rem;
+}
+.abstrData{
+  font-size: 0.36rem;
+  line-height: 1.7;
+}
+.abstrData span{
+  font-size: 0.3rem;
+}
+.toDetail{
+  line-height: 1.7;
+}
+.toDetail i{
+  font-size: 0.7rem;
+}
+/*历史、收藏、下载*/
+.my-hcd{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 0.3rem 0.3rem 0 0.3rem;
+  text-align: center;
+}
+.hisRecImg,.colImg,.downlImg{
+  width: 0.6rem;
+}
+/*精听记录*/
+.listenPart{
+  width:100%;
+  position: relative;
+  top: 4.38rem;
+}
+.lisPartHead{
+  padding:0;
+  height: 0.88rem;
+  line-height: 0.88rem;
+}
+.lisTitle{
+  font-size: 0.36rem;
+  padding-left: 0.3rem;
+}
+.lisMid{
+  width: 1.8rem;
+}
+.lisRight{
+  text-align: center;
+  padding: 0;
+}
+.lisPartBody{
+  position: relative;
+  top: 0.88rem;
+  width:100%;
+}
+.lis-cont{
+  border:0;
+  padding-right: 0.5rem;
+}
+.lis-cont > img:first-child{
+  max-width: 1.2rem;
+  max-height: 1.2rem;
+  position: absolute;
+  top: 9%;
+}
+.lis-title{
+  font-size: 0.32rem;
+  padding-left: 1.5rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.lis-sub{
+  font-size: 0.28rem;
+  margin-top: 2%;
+  padding-left: 1.5rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
