@@ -29,6 +29,6 @@ ionic emulate android
 1. cordova只有在打包ios或者android项目后才能有效使用，如果只是运行ionic serve，将无法使用cordova。
 2. js/index.js文件第12行:$state.go("tab.home"); 注释掉，项目启动时将会进入引导页页面，引导页的接口需要启动后台项目和数据库才能使用(后面会说到后台项目的GitHub路径及使用方式)，所以，为了方便起见，使用$state.go("tab.home");直接跳过引导页和登录页，进入首页。
 3. js/common/config.js文件，如果没有启动后台项目，使用淘宝RAP假数据接口，注释本地后台项目接口；如果启动后台项目，注释淘宝RAP假数据接口，使用本地后台项目接口。
-4. 后台项目GitHub地址：
+4. 后台项目GitHub地址：https://github.com/GeorgeCodesigner/Nodejs-Learn-Edu-App-Server
 
 
